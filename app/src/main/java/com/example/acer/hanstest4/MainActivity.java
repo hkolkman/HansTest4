@@ -2,38 +2,54 @@ package com.example.acer.hanstest4;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import java.util.Scanner;
+import com.example.acer.tuna;
 
 import org.w3c.dom.Text;
 
 public class MainActivity extends AppCompatActivity {
 
-    private String hansString = "oooertoer";
+    public String name;
+    //this is a field
+    public static String gender = "Male";
+    //this is a static field
 
-    @Override
+    private String hansString = simpleMessage();
+
+    tuna tunaObject = new tuna ();
+    //private String hansString = tunaObject.simpleMessage();
+
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         Button hansButton = (Button) findViewById(R.id.hansButton);
 
+
+        System.out.println("Hallo !");
+        //Log.w("haaa", "afasdfa");
+
         hansButton.setOnClickListener(
                 new Button.OnClickListener(){
                     public void onClick(View v){
                         TextView mijnText = (TextView)findViewById(R.id.mijnText);
+
                         mijnText.setText(hansString);
                     }
-
-
-
                 }
-
         );
+    }
 
+    public static void main(String[] args){
+
+        //System.out.println("Hallo !");
     }
 
 
